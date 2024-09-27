@@ -1,0 +1,49 @@
+{
+  "name": "bookit-api",
+  "version": "1.0.0",
+  "description": "API for the BookIt concert reservation system",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx tsc && node dist/index.js",
+    "dev": "npx tsc && nodemon dist/index.js",
+    "migrate": "drizzle-kit migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaikahmadnawaz/bookit-api.git"
+  },
+  "keywords": [
+    "concert",
+    "reservation",
+    "api",
+    "nodejs",
+    "express",
+    "postgresql",
+    "drizzle"
+  ],
+  "author": "Shaik Ahmad Nawaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaikahmadnawaz/bookit-api/issues"
+  },
+  "homepage": "https://github.com/shaikahmadnawaz/bookit-api",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.24.2",
+    "drizzle-orm": "^0.33.0",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "postgres": "^3.4.4",
+    "stripe": "^16.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.2"
+  }
+}
