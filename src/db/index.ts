@@ -4,12 +4,12 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-// Donenv is not working, so I have to hardcode the DATABASE_URL
-const DATABASE_URL =
-  "postgresql://postgres.irepargshoaegdnnppgf:mJyqks55MgQ6q5oV@aws-0-ap-south-1.pooler.supabase.com:6543/postgres";
-
 const client = new Client({
-  connectionString: DATABASE_URL,
+  host: process.env.DATABASE_HOST,
+  port: Number(process.env.DATABASE_PORT),
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE_NAME,
 });
 
 export const connectToDatabase = async () => {
@@ -17,7 +17,7 @@ export const connectToDatabase = async () => {
     await client.connect();
     console.log("Connected to the database successfully!");
   } catch (err) {
-    console.error("Error connecting to the database:", err);
+    console.log("Error connecting to the database:", err);
     throw new Error("Database connection failed");
   }
 };
